@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@ejemplo.com",
+      "password": "messi123",
+      "nombre": "CRACK",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "email": "soporte@ejemplo.com",
+      "password": "soporte123",
+      "nombre": "NAZARENO SOTO",
+      "role": "soporte"
+    },
+    {
+      "id": 3,
+      "email": "sucursal@ejemplo.com",
+      "password": "sucursal123",
+      "nombre": "NAZARENO",
+      "role": "sucursal"
+    }
+  ]
+}

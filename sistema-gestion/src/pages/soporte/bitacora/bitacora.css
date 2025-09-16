@@ -1,0 +1,173 @@
+.bitacora-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bitacora-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+}
+
+.header-title h2 {
+  margin: 0;
+  color: #495057;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Panel de Filtros */
+.filtros-panel {
+  background: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.filtros-panel .form-label {
+  font-weight: 500;
+  color: #495057;
+  margin-bottom: 5px;
+}
+
+/* Contenedor de Eventos */
+.eventos-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.no-eventos {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.eventos-lista {
+  padding: 0;
+}
+
+/* Tarjeta de Evento */
+.evento-card {
+  display: flex;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e9ecef;
+  transition: background-color 0.2s ease;
+}
+
+.evento-card:hover {
+  background-color: #f8f9fa;
+}
+
+.evento-card:last-child {
+  border-bottom: none;
+}
+
+.evento-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+.evento-content {
+  flex: 1;
+}
+
+.evento-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.evento-tipo {
+  font-weight: 600;
+  color: #495057;
+  text-transform: capitalize;
+  font-size: 16px;
+}
+
+.evento-severidad {
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.evento-descripcion {
+  color: #6c757d;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+.evento-meta {
+  display: flex;
+  gap: 15px;
+  font-size: 12px;
+  color: #868e96;
+}
+
+.evento-fecha {
+  font-weight: 500;
+}
+
+.evento-sucursal,
+.evento-ip {
+  padding: 2px 6px;
+  background: #e9ecef;
+  border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bitacora-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .filtros-panel .row {
+    margin: 0;
+  }
+  
+  .filtros-panel .col-md-3,
+  .filtros-panel .col-md-2,
+  .filtros-panel .col-md-1,
+  .filtros-panel .col-md-6 {
+    padding: 0;
+    margin-bottom: 15px;
+  }
+  
+  .evento-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .evento-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+}

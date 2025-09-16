@@ -1,0 +1,247 @@
+/* Contenedor principal */
+.tickets-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Encabezado */
+.tickets-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.tickets-header h2 {
+  color: #333;
+  margin: 0;
+}
+
+/* Botón Nuevo Ticket */
+.btn-new-ticket {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.btn-new-ticket:hover {
+  background-color: #45a049;
+}
+
+/* Lista de tickets */
+.tickets-list {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado de la lista */
+.tickets-list-header {
+  display: grid;
+  grid-template-columns: 80px 2fr 120px 120px 200px 100px;
+  background-color: #f5f5f5;
+  font-weight: 600;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Elementos de la lista */
+.ticket-item {
+  display: grid;
+  grid-template-columns: 80px 2fr 120px 120px 200px 100px;
+  padding: 15px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.ticket-item:last-child {
+  border-bottom: none;
+}
+
+.ticket-item:hover {
+  background-color: #f9f9f9;
+}
+
+/* Celdas */
+.ticket-cell {
+  padding: 5px 0;
+}
+
+/* Badges de estado */
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-open {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.status-in-progress {
+  background-color: #fff3e0;
+  color: #fb8c00;
+}
+
+.status-closed {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+/* Badges de urgencia */
+.urgency-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.urgency-low {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border-color: #81c784;
+}
+
+.urgency-medium {
+  background-color: #fff3e0;
+  color: #ef6c00;
+  border-color: #ffb74d;
+}
+
+.urgency-high {
+  background-color: #ffebee;
+  color: #c62828;
+  border-color: #ef5350;
+  font-weight: 700;
+}
+
+.urgency-critical {
+  background-color: #fff3f3;
+  color: #c2185b;
+  border: 1px solid #f06292;
+  font-weight: 800;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(194, 24, 91, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(194, 24, 91, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(194, 24, 91, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(194, 24, 91, 0);
+  }
+}
+
+/* Efecto hover para todos los badges */
+.urgency-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.urgency-critical:hover {
+  animation: none; /* Detiene la animación al hacer hover */
+  box-shadow: 0 4px 12px rgba(194, 24, 91, 0.4);
+}
+
+/* Botón Ver */
+.btn-view {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.btn-view:hover {
+  background-color: #1976d2;
+}
+
+/* Mensajes */
+.loading,
+.no-tickets,
+.error-message {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+}
+
+.error-message {
+  color: #d32f2f;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .tickets-list-header,
+  .ticket-item {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .tickets-list-header {
+    display: none;
+  }
+  
+  .ticket-item {
+    position: relative;
+    padding: 15px;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .ticket-cell:nth-child(1)::before {
+    content: 'ID: ';
+    font-weight: bold;
+  }
+  
+  .ticket-cell:nth-child(2)::before {
+    content: 'Título: ';
+    font-weight: bold;
+  }
+  
+  .ticket-cell:nth-child(3)::before {
+    content: 'Estado: ';
+    font-weight: bold;
+  }
+  
+  .ticket-cell:nth-child(4)::before {
+    content: 'Urgencia: ';
+    font-weight: bold;
+  }
+  
+  .ticket-cell:nth-child(5)::before {
+    content: 'Fecha: ';
+    font-weight: bold;
+  }
+  
+  .ticket-cell:last-child {
+    grid-column: span 2;
+    text-align: right;
+  }
+}

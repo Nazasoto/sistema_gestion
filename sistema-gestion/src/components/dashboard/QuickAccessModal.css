@@ -1,0 +1,72 @@
+.quick-access-modal-content {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.tickets-list {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.ticket-card {
+  transition: all 0.2s ease;
+  background: #fff;
+}
+
+.ticket-card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+}
+
+.ticket-card .badge {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.ticket-card h6 {
+  color: #333;
+  font-weight: 600;
+}
+
+.ticket-card .small {
+  font-size: 0.8rem;
+}
+
+.ticket-card .btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  min-width: 70px;
+}
+
+/* Scrollbar personalizado */
+.tickets-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tickets-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.tickets-list::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.tickets-list::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ticket-card .d-flex {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+  
+  .ticket-card .d-flex .d-flex {
+    flex-direction: row !important;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+}

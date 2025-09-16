@@ -1,0 +1,10 @@
+/* Tailwind CSS - Commented out to avoid PostCSS plugin error */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/*Importamos los estilos*/
+@import './components/login.css';
+@import './components/register.css';
+@import './components/global.css';
+@import './components/adminCss/admin.css';

@@ -1,0 +1,22 @@
+{
+  "name": "sistema-tickets",
+  "version": "1.0.0",
+  "description": "Sistema de gestión de tickets",
+  "scripts": {
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd sistema-gestion && npm run dev\"",
+    "build": "cd sistema-gestion && npm run build",
+    "start": "npm run build && cd backend && npm run start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.0.0",
+    "@fortawesome/free-solid-svg-icons": "^7.0.0",
+    "@fortawesome/react-fontawesome": "^0.2.3",
+    "date-fns": "^4.1.0",
+    "dotenv": "^16.0.0",
+    "mysql2": "^3.14.3"
+  },
+  "type": "module"
+}

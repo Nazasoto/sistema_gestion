@@ -1,0 +1,1768 @@
+[
+  {
+    "name": "_migrations",
+    "rows": 4,
+    "columns": 3,
+    "size": 16384,
+    "created": "2025-08-15T17:19:10.000Z",
+    "updated": "2025-08-15T17:25:26.000Z",
+    "structure": [
+      {
+        "field": "id",
+        "type": "int",
+        "null": "NO",
+        "key": "PRI",
+        "default": null
+      },
+      {
+        "field": "name",
+        "type": "varchar(255)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "executed_at",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      }
+    ]
+  },
+  {
+    "name": "noticias",
+    "rows": 1,
+    "columns": 10,
+    "size": 98304,
+    "created": "2025-08-24T17:06:01.000Z",
+    "updated": "2025-09-02T14:40:17.000Z",
+    "structure": [
+      {
+        "field": "id_noticia",
+        "type": "int",
+        "null": "NO",
+        "key": "PRI",
+        "default": null
+      },
+      {
+        "field": "titulo",
+        "type": "varchar(255)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "description",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "estado",
+        "type": "varchar(50)",
+        "null": "NO",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "fecha_creacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "field": "image",
+        "type": "mediumtext",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "sucursal_destino",
+        "type": "varchar(50)",
+        "null": "YES",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "ticket_id",
+        "type": "int",
+        "null": "YES",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "supervisor_id",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "tipo",
+        "type": "enum('general','ticket_rechazado','ticket_aprobado','anuncio')",
+        "null": "YES",
+        "key": "",
+        "default": "general"
+      }
+    ]
+  },
+  {
+    "name": "old_tickets_backup_final",
+    "rows": 0,
+    "columns": 13,
+    "size": 16384,
+    "created": "2025-08-29T16:39:22.000Z",
+    "updated": null,
+    "structure": [
+      {
+        "field": "id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": "0"
+      },
+      {
+        "field": "titulo",
+        "type": "varchar(255)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "descripcion",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "estado",
+        "type": "enum('nuevo','en_espera','en_progreso','resuelto','cerrado','cancelado')",
+        "null": "NO",
+        "key": "",
+        "default": "nuevo"
+      },
+      {
+        "field": "prioridad",
+        "type": "enum('baja','media','alta','urgente')",
+        "null": "NO",
+        "key": "",
+        "default": "media"
+      },
+      {
+        "field": "categoria",
+        "type": "varchar(50)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "usuario_creador_id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "usuario_asignado_id",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_creacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "field": "fecha_actualizacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "field": "fecha_cierre",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "archivos_adjuntos",
+        "type": "json",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "comentarios",
+        "type": "json",
+        "null": "YES",
+        "key": "",
+        "default": null
+      }
+    ]
+  },
+  {
+    "name": "password_reset_requests",
+    "rows": 18,
+    "columns": 13,
+    "size": 16384,
+    "created": "2025-09-01T17:21:52.000Z",
+    "updated": "2025-09-08T15:23:37.000Z",
+    "structure": [
+      {
+        "field": "id",
+        "type": "int",
+        "null": "NO",
+        "key": "PRI",
+        "default": null
+      },
+      {
+        "field": "user_id",
+        "type": "int",
+        "null": "NO",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "email",
+        "type": "varchar(255)",
+        "null": "NO",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "nombre_completo",
+        "type": "varchar(255)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "sucursal",
+        "type": "varchar(100)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "motivo",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "requested_at",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "MUL",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "field": "status",
+        "type": "enum('pendiente','completado','rechazado')",
+        "null": "YES",
+        "key": "MUL",
+        "default": "pendiente"
+      },
+      {
+        "field": "handled_by",
+        "type": "int",
+        "null": "YES",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "handled_at",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "admin_notes",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "created_at",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "field": "updated_at",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      }
+    ]
+  },
+  {
+    "name": "password_resets",
+    "rows": 1,
+    "columns": 8,
+    "size": 16384,
+    "created": "2025-09-01T16:09:44.000Z",
+    "updated": "2025-09-02T20:52:33.000Z",
+    "structure": [
+      {
+        "field": "id",
+        "type": "int",
+        "null": "NO",
+        "key": "PRI",
+        "default": null
+      },
+      {
+        "field": "user_id",
+        "type": "int",
+        "null": "NO",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "email",
+        "type": "varchar(255)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "token",
+        "type": "varchar(255)",
+        "null": "NO",
+        "key": "UNI",
+        "default": null
+      },
+      {
+        "field": "expires_at",
+        "type": "datetime",
+        "null": "NO",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "used",
+        "type": "tinyint(1)",
+        "null": "YES",
+        "key": "",
+        "default": "0"
+      },
+      {
+        "field": "used_at",
+        "type": "datetime",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "created_at",
+        "type": "datetime",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      }
+    ]
+  },
+  {
+    "name": "sucursales",
+    "rows": 78,
+    "columns": 12,
+    "size": 16384,
+    "created": "2025-09-08T14:58:19.000Z",
+    "updated": "2025-09-08T15:08:15.000Z",
+    "structure": [
+      {
+        "field": "id",
+        "type": "int",
+        "null": "NO",
+        "key": "PRI",
+        "default": null
+      },
+      {
+        "field": "nro_sucursal",
+        "type": "varchar(10)",
+        "null": "NO",
+        "key": "UNI",
+        "default": null
+      },
+      {
+        "field": "nombre",
+        "type": "varchar(100)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "localidad",
+        "type": "varchar(100)",
+        "null": "NO",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "provincia",
+        "type": "varchar(50)",
+        "null": "NO",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "mail",
+        "type": "varchar(100)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "direccion",
+        "type": "varchar(200)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "telefono",
+        "type": "varchar(20)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "email",
+        "type": "varchar(100)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "activa",
+        "type": "tinyint(1)",
+        "null": "YES",
+        "key": "",
+        "default": "1"
+      },
+      {
+        "field": "fecha_creacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "field": "fecha_actualizacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      }
+    ]
+  },
+  {
+    "name": "sucursales_backup",
+    "rows": 77,
+    "columns": 11,
+    "size": 16384,
+    "created": "2025-08-29T20:13:34.000Z",
+    "updated": "2025-08-29T20:13:34.000Z",
+    "structure": [
+      {
+        "field": "id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": "0"
+      },
+      {
+        "field": "nro_sucursal",
+        "type": "varchar(10)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "nombre",
+        "type": "varchar(100)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "localidad",
+        "type": "varchar(100)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "provincia",
+        "type": "varchar(50)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "direccion",
+        "type": "varchar(200)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "telefono",
+        "type": "varchar(20)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "email",
+        "type": "varchar(100)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "activa",
+        "type": "tinyint(1)",
+        "null": "YES",
+        "key": "",
+        "default": "1"
+      },
+      {
+        "field": "fecha_creacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "field": "fecha_actualizacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      }
+    ]
+  },
+  {
+    "name": "ticket_approvals_backup_final",
+    "rows": 0,
+    "columns": 7,
+    "size": 16384,
+    "created": "2025-08-29T16:39:21.000Z",
+    "updated": null,
+    "structure": [
+      {
+        "field": "id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": "0"
+      },
+      {
+        "field": "ticket_id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "supervisor_id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "accion",
+        "type": "enum('aprobado','rechazado')",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "motivo",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_decision",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "field": "notificacion_enviada",
+        "type": "tinyint(1)",
+        "null": "YES",
+        "key": "",
+        "default": "0"
+      }
+    ]
+  },
+  {
+    "name": "ticket_history",
+    "rows": 45,
+    "columns": 7,
+    "size": 16384,
+    "created": "2025-09-03T20:58:25.000Z",
+    "updated": "2025-09-09T17:45:56.000Z",
+    "structure": [
+      {
+        "field": "id",
+        "type": "int",
+        "null": "NO",
+        "key": "PRI",
+        "default": null
+      },
+      {
+        "field": "ticket_id",
+        "type": "int",
+        "null": "NO",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "estado_anterior",
+        "type": "enum('nuevo','en_espera','en_progreso','resuelto','mal','cerrado','cancelado','pendiente_aprobacion','aprobado','rechazado')",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "estado_nuevo",
+        "type": "enum('nuevo','en_espera','en_progreso','resuelto','mal','cerrado','cancelado','pendiente_aprobacion','aprobado','rechazado')",
+        "null": "NO",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "usuario_id",
+        "type": "int",
+        "null": "NO",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "comentario",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_cambio",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "MUL",
+        "default": "CURRENT_TIMESTAMP"
+      }
+    ]
+  },
+  {
+    "name": "tickets",
+    "rows": 12,
+    "columns": 15,
+    "size": 16384,
+    "created": "2025-09-08T13:40:02.000Z",
+    "updated": "2025-09-09T17:45:55.000Z",
+    "structure": [
+      {
+        "field": "id",
+        "type": "int",
+        "null": "NO",
+        "key": "PRI",
+        "default": null
+      },
+      {
+        "field": "titulo",
+        "type": "varchar(255)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "descripcion",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "estado",
+        "type": "enum('nuevo','en_progreso','resuelto','mal','cerrado','cancelado','pendiente_aprobacion','aprobado','rechazado')",
+        "null": "NO",
+        "key": "MUL",
+        "default": "nuevo"
+      },
+      {
+        "field": "prioridad",
+        "type": "enum('baja','media','alta','urgente')",
+        "null": "NO",
+        "key": "MUL",
+        "default": "media"
+      },
+      {
+        "field": "categoria",
+        "type": "varchar(50)",
+        "null": "YES",
+        "key": "",
+        "default": "general"
+      },
+      {
+        "field": "usuario_creador_id",
+        "type": "int",
+        "null": "NO",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "usuario_asignado_id",
+        "type": "int",
+        "null": "YES",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "fecha_creacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "field": "fecha_actualizacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "field": "fecha_cierre",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "archivos_adjuntos",
+        "type": "json",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "comentarios",
+        "type": "json",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "usuario_reasignado",
+        "type": "int",
+        "null": "YES",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "fecha_reasignacion",
+        "type": "datetime",
+        "null": "YES",
+        "key": "MUL",
+        "default": null
+      }
+    ]
+  },
+  {
+    "name": "tickets_backup_1756922176613",
+    "rows": 8,
+    "columns": 21,
+    "size": 16384,
+    "created": "2025-09-03T20:56:17.000Z",
+    "updated": "2025-09-03T20:56:17.000Z",
+    "structure": [
+      {
+        "field": "id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": "0"
+      },
+      {
+        "field": "titulo",
+        "type": "varchar(255)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "descripcion",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "estado",
+        "type": "enum('nuevo','pendiente_aprobacion','aprobado','rechazado','en_espera','en_progreso','resuelto','cerrado','cancelado')",
+        "null": "YES",
+        "key": "",
+        "default": "pendiente_aprobacion"
+      },
+      {
+        "field": "prioridad",
+        "type": "enum('baja','media','alta','urgente')",
+        "null": "NO",
+        "key": "",
+        "default": "media"
+      },
+      {
+        "field": "categoria",
+        "type": "varchar(50)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "usuario_creador_id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "usuario_asignado_id",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_creacion",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_actualizacion",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_cierre",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "archivos_adjuntos",
+        "type": "json",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "comentarios",
+        "type": "json",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "aprobado_por",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_aprobacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "motivo_rechazo",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "rechazado_por",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_rechazo",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "supervisor_id",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_tomado",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_resuelto",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      }
+    ]
+  },
+  {
+    "name": "tickets_backup_1756922259441",
+    "rows": 8,
+    "columns": 21,
+    "size": 16384,
+    "created": "2025-09-03T20:57:39.000Z",
+    "updated": "2025-09-03T20:57:39.000Z",
+    "structure": [
+      {
+        "field": "id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": "0"
+      },
+      {
+        "field": "titulo",
+        "type": "varchar(255)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "descripcion",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "estado",
+        "type": "enum('nuevo','pendiente_aprobacion','aprobado','rechazado','en_espera','en_progreso','resuelto','cerrado','cancelado')",
+        "null": "YES",
+        "key": "",
+        "default": "pendiente_aprobacion"
+      },
+      {
+        "field": "prioridad",
+        "type": "enum('baja','media','alta','urgente')",
+        "null": "NO",
+        "key": "",
+        "default": "media"
+      },
+      {
+        "field": "categoria",
+        "type": "varchar(50)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "usuario_creador_id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "usuario_asignado_id",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_creacion",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_actualizacion",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_cierre",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "archivos_adjuntos",
+        "type": "json",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "comentarios",
+        "type": "json",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "aprobado_por",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_aprobacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "motivo_rechazo",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "rechazado_por",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_rechazo",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "supervisor_id",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_tomado",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_resuelto",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      }
+    ]
+  },
+  {
+    "name": "tickets_backup_1756922279155",
+    "rows": 8,
+    "columns": 21,
+    "size": 16384,
+    "created": "2025-09-03T20:57:59.000Z",
+    "updated": "2025-09-03T20:57:59.000Z",
+    "structure": [
+      {
+        "field": "id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": "0"
+      },
+      {
+        "field": "titulo",
+        "type": "varchar(255)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "descripcion",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "estado",
+        "type": "enum('nuevo','pendiente_aprobacion','aprobado','rechazado','en_espera','en_progreso','resuelto','cerrado','cancelado')",
+        "null": "YES",
+        "key": "",
+        "default": "pendiente_aprobacion"
+      },
+      {
+        "field": "prioridad",
+        "type": "enum('baja','media','alta','urgente')",
+        "null": "NO",
+        "key": "",
+        "default": "media"
+      },
+      {
+        "field": "categoria",
+        "type": "varchar(50)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "usuario_creador_id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "usuario_asignado_id",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_creacion",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_actualizacion",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_cierre",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "archivos_adjuntos",
+        "type": "json",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "comentarios",
+        "type": "json",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "aprobado_por",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_aprobacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "motivo_rechazo",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "rechazado_por",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_rechazo",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "supervisor_id",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_tomado",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_resuelto",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      }
+    ]
+  },
+  {
+    "name": "tickets_backup_1756922304192",
+    "rows": 8,
+    "columns": 21,
+    "size": 16384,
+    "created": "2025-09-03T20:58:24.000Z",
+    "updated": "2025-09-03T20:58:24.000Z",
+    "structure": [
+      {
+        "field": "id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": "0"
+      },
+      {
+        "field": "titulo",
+        "type": "varchar(255)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "descripcion",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "estado",
+        "type": "enum('nuevo','pendiente_aprobacion','aprobado','rechazado','en_espera','en_progreso','resuelto','cerrado','cancelado')",
+        "null": "YES",
+        "key": "",
+        "default": "pendiente_aprobacion"
+      },
+      {
+        "field": "prioridad",
+        "type": "enum('baja','media','alta','urgente')",
+        "null": "NO",
+        "key": "",
+        "default": "media"
+      },
+      {
+        "field": "categoria",
+        "type": "varchar(50)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "usuario_creador_id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "usuario_asignado_id",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_creacion",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_actualizacion",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_cierre",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "archivos_adjuntos",
+        "type": "json",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "comentarios",
+        "type": "json",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "aprobado_por",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_aprobacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "motivo_rechazo",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "rechazado_por",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_rechazo",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "supervisor_id",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_tomado",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_resuelto",
+        "type": "varchar(25)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      }
+    ]
+  },
+  {
+    "name": "tickets_backup_1757003035884",
+    "rows": 4,
+    "columns": 13,
+    "size": 16384,
+    "created": "2025-09-04T19:23:56.000Z",
+    "updated": "2025-09-04T19:23:56.000Z",
+    "structure": [
+      {
+        "field": "id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": "0"
+      },
+      {
+        "field": "titulo",
+        "type": "varchar(255)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "descripcion",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "estado",
+        "type": "enum('nuevo','en_progreso','resuelto','mal','cerrado','cancelado','pendiente_aprobacion','aprobado','rechazado')",
+        "null": "NO",
+        "key": "",
+        "default": "nuevo"
+      },
+      {
+        "field": "prioridad",
+        "type": "enum('baja','media','alta','urgente')",
+        "null": "NO",
+        "key": "",
+        "default": "media"
+      },
+      {
+        "field": "categoria",
+        "type": "varchar(50)",
+        "null": "YES",
+        "key": "",
+        "default": "general"
+      },
+      {
+        "field": "usuario_creador_id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "usuario_asignado_id",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_creacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "field": "fecha_actualizacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "field": "fecha_cierre",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "archivos_adjuntos",
+        "type": "json",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "comentarios",
+        "type": "json",
+        "null": "YES",
+        "key": "",
+        "default": null
+      }
+    ]
+  },
+  {
+    "name": "tickets_backup_1757003045508",
+    "rows": 0,
+    "columns": 13,
+    "size": 16384,
+    "created": "2025-09-04T19:24:05.000Z",
+    "updated": null,
+    "structure": [
+      {
+        "field": "id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": "0"
+      },
+      {
+        "field": "titulo",
+        "type": "varchar(255)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "descripcion",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "estado",
+        "type": "enum('nuevo','en_progreso','resuelto','mal','cerrado','cancelado','pendiente_aprobacion','aprobado','rechazado')",
+        "null": "NO",
+        "key": "",
+        "default": "nuevo"
+      },
+      {
+        "field": "prioridad",
+        "type": "enum('baja','media','alta','urgente')",
+        "null": "NO",
+        "key": "",
+        "default": "media"
+      },
+      {
+        "field": "categoria",
+        "type": "varchar(50)",
+        "null": "YES",
+        "key": "",
+        "default": "general"
+      },
+      {
+        "field": "usuario_creador_id",
+        "type": "int",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "usuario_asignado_id",
+        "type": "int",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_creacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "field": "fecha_actualizacion",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "field": "fecha_cierre",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "archivos_adjuntos",
+        "type": "json",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "comentarios",
+        "type": "json",
+        "null": "YES",
+        "key": "",
+        "default": null
+      }
+    ]
+  },
+  {
+    "name": "usuarios",
+    "rows": 6,
+    "columns": 19,
+    "size": 16384,
+    "created": "2025-09-02T20:49:22.000Z",
+    "updated": "2025-09-08T15:23:37.000Z",
+    "structure": [
+      {
+        "field": "id_usuario",
+        "type": "int",
+        "null": "NO",
+        "key": "PRI",
+        "default": null
+      },
+      {
+        "field": "usuario",
+        "type": "varchar(50)",
+        "null": "NO",
+        "key": "UNI",
+        "default": null
+      },
+      {
+        "field": "role",
+        "type": "varchar(20)",
+        "null": "NO",
+        "key": "",
+        "default": "usuario"
+      },
+      {
+        "field": "nombre",
+        "type": "varchar(100)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "apellido",
+        "type": "varchar(100)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "fecha_alta",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "field": "fecha_solicitud",
+        "type": "timestamp",
+        "null": "YES",
+        "key": "",
+        "default": "CURRENT_TIMESTAMP"
+      },
+      {
+        "field": "vigencia",
+        "type": "tinyint(1)",
+        "null": "YES",
+        "key": "",
+        "default": "1"
+      },
+      {
+        "field": "estado",
+        "type": "enum('pendiente','activo','inactivo','rechazado')",
+        "null": "NO",
+        "key": "MUL",
+        "default": "pendiente"
+      },
+      {
+        "field": "token_confirmacion",
+        "type": "varchar(255)",
+        "null": "YES",
+        "key": "MUL",
+        "default": null
+      },
+      {
+        "field": "auth_provider",
+        "type": "varchar(20)",
+        "null": "YES",
+        "key": "",
+        "default": "local"
+      },
+      {
+        "field": "motivo_rechazo",
+        "type": "text",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "mail",
+        "type": "varchar(100)",
+        "null": "NO",
+        "key": "UNI",
+        "default": null
+      },
+      {
+        "field": "password",
+        "type": "varchar(255)",
+        "null": "NO",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "telefono",
+        "type": "varchar(20)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "nacimiento",
+        "type": "date",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "sucursal",
+        "type": "varchar(10)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "localidad",
+        "type": "varchar(100)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      },
+      {
+        "field": "provincia",
+        "type": "varchar(50)",
+        "null": "YES",
+        "key": "",
+        "default": null
+      }
+    ]
+  }
+]

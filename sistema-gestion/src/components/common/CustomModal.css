@@ -1,0 +1,189 @@
+/* Custom Modal Styles */
+.custom-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.custom-modal {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  max-height: 90vh;
+  overflow: hidden;
+  animation: slideIn 0.3s ease-out;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Tamaños del modal */
+.custom-modal.small {
+  width: 100%;
+  max-width: 400px;
+}
+
+.custom-modal.medium {
+  width: 100%;
+  max-width: 600px;
+}
+
+.custom-modal.large {
+  width: 100%;
+  max-width: 800px;
+}
+
+.custom-modal.extra-large {
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Header del modal */
+.custom-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-bottom: 1px solid #dee2e6;
+  position: relative;
+}
+
+.custom-modal-header::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+}
+
+.custom-modal-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.custom-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.custom-modal-close:hover {
+  background: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  transform: scale(1.1);
+}
+
+/* Body del modal */
+.custom-modal-body {
+  padding: 2rem;
+  max-height: calc(90vh - 120px);
+  overflow-y: auto;
+}
+
+/* Scrollbar personalizada */
+.custom-modal-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-modal-body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.custom-modal-body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.custom-modal-body::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .custom-modal-overlay {
+    padding: 0.5rem;
+  }
+  
+  .custom-modal {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    border-radius: 12px;
+  }
+  
+  .custom-modal-header {
+    padding: 1rem 1.5rem;
+  }
+  
+  .custom-modal-body {
+    padding: 1.5rem;
+  }
+  
+  .custom-modal-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Estados especiales */
+.custom-modal.success .custom-modal-header::before {
+  background: linear-gradient(90deg, #28a745, #20c997);
+}
+
+.custom-modal.warning .custom-modal-header::before {
+  background: linear-gradient(90deg, #ffc107, #fd7e14);
+}
+
+.custom-modal.danger .custom-modal-header::before {
+  background: linear-gradient(90deg, #dc3545, #e83e8c);
+}
+
+.custom-modal.info .custom-modal-header::before {
+  background: linear-gradient(90deg, #17a2b8, #007bff);
+}
