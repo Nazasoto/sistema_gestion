@@ -1,0 +1,172 @@
+{
+  "table_name": "tickets_backup_1757003035884",
+  "structure": [
+    {
+      "Field": "id",
+      "Type": "int",
+      "Null": "NO",
+      "Key": "",
+      "Default": "0",
+      "Extra": ""
+    },
+    {
+      "Field": "titulo",
+      "Type": "varchar(255)",
+      "Null": "NO",
+      "Key": "",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "descripcion",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "estado",
+      "Type": "enum('nuevo','en_progreso','resuelto','mal','cerrado','cancelado','pendiente_aprobacion','aprobado','rechazado')",
+      "Null": "NO",
+      "Key": "",
+      "Default": "nuevo",
+      "Extra": ""
+    },
+    {
+      "Field": "prioridad",
+      "Type": "enum('baja','media','alta','urgente')",
+      "Null": "NO",
+      "Key": "",
+      "Default": "media",
+      "Extra": ""
+    },
+    {
+      "Field": "categoria",
+      "Type": "varchar(50)",
+      "Null": "YES",
+      "Key": "",
+      "Default": "general",
+      "Extra": ""
+    },
+    {
+      "Field": "usuario_creador_id",
+      "Type": "int",
+      "Null": "NO",
+      "Key": "",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "usuario_asignado_id",
+      "Type": "int",
+      "Null": "YES",
+      "Key": "",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "fecha_creacion",
+      "Type": "timestamp",
+      "Null": "YES",
+      "Key": "",
+      "Default": "CURRENT_TIMESTAMP",
+      "Extra": "DEFAULT_GENERATED"
+    },
+    {
+      "Field": "fecha_actualizacion",
+      "Type": "timestamp",
+      "Null": "YES",
+      "Key": "",
+      "Default": "CURRENT_TIMESTAMP",
+      "Extra": "DEFAULT_GENERATED on update CURRENT_TIMESTAMP"
+    },
+    {
+      "Field": "fecha_cierre",
+      "Type": "timestamp",
+      "Null": "YES",
+      "Key": "",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "archivos_adjuntos",
+      "Type": "json",
+      "Null": "YES",
+      "Key": "",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "comentarios",
+      "Type": "json",
+      "Null": "YES",
+      "Key": "",
+      "Default": null,
+      "Extra": ""
+    }
+  ],
+  "data": [
+    {
+      "id": 1,
+      "titulo": "se rompio la impresora",
+      "descripcion": "la impresora tiene problemas no me conecta con el sistema",
+      "estado": "resuelto",
+      "prioridad": "media",
+      "categoria": "otros",
+      "usuario_creador_id": 7,
+      "usuario_asignado_id": 1,
+      "fecha_creacion": "2025-09-03T18:02:43.000Z",
+      "fecha_actualizacion": "2025-09-04T10:25:55.000Z",
+      "fecha_cierre": "2025-09-04T10:25:55.000Z",
+      "archivos_adjuntos": [],
+      "comentarios": "5555"
+    },
+    {
+      "id": 2,
+      "titulo": "TEST NUMERO 24141242143214",
+      "descripcion": "ESTO ES PARA TESTEAR QUE TODO FUNCIONE",
+      "estado": "cancelado",
+      "prioridad": "baja",
+      "categoria": "problemas_con_el_sigeco",
+      "usuario_creador_id": 7,
+      "usuario_asignado_id": 1,
+      "fecha_creacion": "2025-09-04T10:05:07.000Z",
+      "fecha_actualizacion": "2025-09-04T10:27:02.000Z",
+      "fecha_cierre": "2025-09-04T10:27:02.000Z",
+      "archivos_adjuntos": [],
+      "comentarios": "Se canceló"
+    },
+    {
+      "id": 4,
+      "titulo": "OTRA VEZ LO TESTEO",
+      "descripcion": "FSADFSAFA",
+      "estado": "resuelto",
+      "prioridad": "urgente",
+      "categoria": "otros",
+      "usuario_creador_id": 7,
+      "usuario_asignado_id": 1,
+      "fecha_creacion": "2025-09-04T10:10:51.000Z",
+      "fecha_actualizacion": "2025-09-04T10:12:21.000Z",
+      "fecha_cierre": "2025-09-04T10:12:21.000Z",
+      "archivos_adjuntos": [],
+      "comentarios": "ASFAF"
+    },
+    {
+      "id": 5,
+      "titulo": "fgwghreg",
+      "descripcion": "hqenohfdqmw,metanm.bfjÑAÑJBDSÑIFLKENTL{abfsjJÑHFÑUqhf",
+      "estado": "resuelto",
+      "prioridad": "urgente",
+      "categoria": "control_de_caja",
+      "usuario_creador_id": 7,
+      "usuario_asignado_id": 1,
+      "fecha_creacion": "2025-09-04T16:04:10.000Z",
+      "fecha_actualizacion": "2025-09-04T16:16:05.000Z",
+      "fecha_cierre": "2025-09-04T16:16:05.000Z",
+      "archivos_adjuntos": [],
+      "comentarios": "4664465"
+    }
+  ],
+  "export_date": "2025-09-16T11:11:49.026Z"
+}

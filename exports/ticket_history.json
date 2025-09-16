@@ -1,0 +1,433 @@
+{
+  "table_name": "ticket_history",
+  "structure": [
+    {
+      "Field": "id",
+      "Type": "int",
+      "Null": "NO",
+      "Key": "PRI",
+      "Default": null,
+      "Extra": "auto_increment"
+    },
+    {
+      "Field": "ticket_id",
+      "Type": "int",
+      "Null": "NO",
+      "Key": "MUL",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "estado_anterior",
+      "Type": "enum('nuevo','en_espera','en_progreso','resuelto','pendiente','cerrado','cancelado','pendiente_aprobacion','aprobado','rechazado')",
+      "Null": "YES",
+      "Key": "",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "estado_nuevo",
+      "Type": "enum('nuevo','en_espera','en_progreso','resuelto','pendiente','cerrado','cancelado','pendiente_aprobacion','aprobado','rechazado')",
+      "Null": "NO",
+      "Key": "MUL",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "usuario_id",
+      "Type": "int",
+      "Null": "NO",
+      "Key": "MUL",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "comentario",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "fecha_cambio",
+      "Type": "timestamp",
+      "Null": "YES",
+      "Key": "MUL",
+      "Default": "CURRENT_TIMESTAMP",
+      "Extra": "DEFAULT_GENERATED"
+    }
+  ],
+  "data": [
+    {
+      "id": 1,
+      "ticket_id": 1,
+      "estado_anterior": "nuevo",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-09T16:57:42.000Z"
+    },
+    {
+      "id": 2,
+      "ticket_id": 1,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "cancelado",
+      "usuario_id": 7,
+      "comentario": null,
+      "fecha_cambio": "2025-09-09T16:58:12.000Z"
+    },
+    {
+      "id": 3,
+      "ticket_id": 2,
+      "estado_anterior": "nuevo",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-09T17:11:11.000Z"
+    },
+    {
+      "id": 4,
+      "ticket_id": 3,
+      "estado_anterior": "nuevo",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-09T17:12:07.000Z"
+    },
+    {
+      "id": 5,
+      "ticket_id": 4,
+      "estado_anterior": "nuevo",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-09T17:12:52.000Z"
+    },
+    {
+      "id": 6,
+      "ticket_id": 5,
+      "estado_anterior": "nuevo",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-09T17:13:19.000Z"
+    },
+    {
+      "id": 7,
+      "ticket_id": 3,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "resuelto",
+      "usuario_id": 1,
+      "comentario": "resuelto",
+      "fecha_cambio": "2025-09-09T17:14:15.000Z"
+    },
+    {
+      "id": 8,
+      "ticket_id": 2,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "cancelado",
+      "usuario_id": 1,
+      "comentario": "cancelado",
+      "fecha_cambio": "2025-09-09T17:14:41.000Z"
+    },
+    {
+      "id": 9,
+      "ticket_id": 5,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "resuelto",
+      "usuario_id": 1,
+      "comentario": "resuelto",
+      "fecha_cambio": "2025-09-09T17:14:55.000Z"
+    },
+    {
+      "id": 10,
+      "ticket_id": 4,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "resuelto",
+      "usuario_id": 1,
+      "comentario": "resuelto",
+      "fecha_cambio": "2025-09-09T17:15:13.000Z"
+    },
+    {
+      "id": 11,
+      "ticket_id": 6,
+      "estado_anterior": "nuevo",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-09T17:45:44.000Z"
+    },
+    {
+      "id": 12,
+      "ticket_id": 6,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "resuelto",
+      "usuario_id": 5,
+      "comentario": "listo",
+      "fecha_cambio": "2025-09-09T18:03:32.000Z"
+    },
+    {
+      "id": 13,
+      "ticket_id": 9,
+      "estado_anterior": "nuevo",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-10T10:10:08.000Z"
+    },
+    {
+      "id": 14,
+      "ticket_id": 9,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "pendiente",
+      "usuario_id": 1,
+      "comentario": "Pasa a ser pendiente",
+      "fecha_cambio": "2025-09-10T10:11:56.000Z"
+    },
+    {
+      "id": 15,
+      "ticket_id": 9,
+      "estado_anterior": "pendiente",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-10T10:15:27.000Z"
+    },
+    {
+      "id": 16,
+      "ticket_id": 9,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "resuelto",
+      "usuario_id": 1,
+      "comentario": "fsd",
+      "fecha_cambio": "2025-09-10T11:06:07.000Z"
+    },
+    {
+      "id": 17,
+      "ticket_id": 8,
+      "estado_anterior": "nuevo",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-10T15:01:39.000Z"
+    },
+    {
+      "id": 18,
+      "ticket_id": 8,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "resuelto",
+      "usuario_id": 1,
+      "comentario": "Resuelto!",
+      "fecha_cambio": "2025-09-10T15:02:02.000Z"
+    },
+    {
+      "id": 19,
+      "ticket_id": 7,
+      "estado_anterior": "nuevo",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-10T17:33:14.000Z"
+    },
+    {
+      "id": 20,
+      "ticket_id": 7,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "pendiente",
+      "usuario_id": 1,
+      "comentario": "Que lo agarre el que quiera",
+      "fecha_cambio": "2025-09-10T17:33:47.000Z"
+    },
+    {
+      "id": 21,
+      "ticket_id": 7,
+      "estado_anterior": "pendiente",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 4,
+      "comentario": null,
+      "fecha_cambio": "2025-09-10T17:35:50.000Z"
+    },
+    {
+      "id": 22,
+      "ticket_id": 7,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "pendiente",
+      "usuario_id": 4,
+      "comentario": "asd",
+      "fecha_cambio": "2025-09-10T17:43:02.000Z"
+    },
+    {
+      "id": 23,
+      "ticket_id": 7,
+      "estado_anterior": "pendiente",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-11T10:43:42.000Z"
+    },
+    {
+      "id": 24,
+      "ticket_id": 7,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "resuelto",
+      "usuario_id": 1,
+      "comentario": "Resuelto",
+      "fecha_cambio": "2025-09-11T11:02:01.000Z"
+    },
+    {
+      "id": 25,
+      "ticket_id": 10,
+      "estado_anterior": "nuevo",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-11T11:43:03.000Z"
+    },
+    {
+      "id": 26,
+      "ticket_id": 10,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "pendiente",
+      "usuario_id": 1,
+      "comentario": "Lo dejo por si alguno lo quiere",
+      "fecha_cambio": "2025-09-11T11:46:26.000Z"
+    },
+    {
+      "id": 27,
+      "ticket_id": 10,
+      "estado_anterior": "pendiente",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-11T17:09:27.000Z"
+    },
+    {
+      "id": 28,
+      "ticket_id": 10,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "pendiente",
+      "usuario_id": 1,
+      "comentario": "Me quiero ir",
+      "fecha_cambio": "2025-09-11T17:10:24.000Z"
+    },
+    {
+      "id": 29,
+      "ticket_id": 10,
+      "estado_anterior": "pendiente",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-11T17:48:03.000Z"
+    },
+    {
+      "id": 30,
+      "ticket_id": 10,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "pendiente",
+      "usuario_id": 1,
+      "comentario": "858",
+      "fecha_cambio": "2025-09-11T17:48:55.000Z"
+    },
+    {
+      "id": 31,
+      "ticket_id": 10,
+      "estado_anterior": "pendiente",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-11T17:49:10.000Z"
+    },
+    {
+      "id": 32,
+      "ticket_id": 10,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "pendiente",
+      "usuario_id": 1,
+      "comentario": "88",
+      "fecha_cambio": "2025-09-11T17:49:48.000Z"
+    },
+    {
+      "id": 33,
+      "ticket_id": 10,
+      "estado_anterior": "pendiente",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-12T12:30:07.000Z"
+    },
+    {
+      "id": 34,
+      "ticket_id": 10,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "pendiente",
+      "usuario_id": 1,
+      "comentario": "dgg",
+      "fecha_cambio": "2025-09-12T12:34:10.000Z"
+    },
+    {
+      "id": 35,
+      "ticket_id": 10,
+      "estado_anterior": "pendiente",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-12T12:34:15.000Z"
+    },
+    {
+      "id": 36,
+      "ticket_id": 10,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "pendiente",
+      "usuario_id": 1,
+      "comentario": "gfgwr",
+      "fecha_cambio": "2025-09-12T12:34:49.000Z"
+    },
+    {
+      "id": 37,
+      "ticket_id": 10,
+      "estado_anterior": "pendiente",
+      "estado_nuevo": "en_progreso",
+      "usuario_id": 1,
+      "comentario": null,
+      "fecha_cambio": "2025-09-12T12:39:45.000Z"
+    },
+    {
+      "id": 38,
+      "ticket_id": 10,
+      "estado_anterior": "en_progreso",
+      "estado_nuevo": "resuelto",
+      "usuario_id": 1,
+      "comentario": "Resuelto",
+      "fecha_cambio": "2025-09-12T13:13:23.000Z"
+    },
+    {
+      "id": 39,
+      "ticket_id": 11,
+      "estado_anterior": "nuevo",
+      "estado_nuevo": "cancelado",
+      "usuario_id": 7,
+      "comentario": null,
+      "fecha_cambio": "2025-09-12T14:20:45.000Z"
+    },
+    {
+      "id": 40,
+      "ticket_id": 12,
+      "estado_anterior": "nuevo",
+      "estado_nuevo": "cancelado",
+      "usuario_id": 7,
+      "comentario": null,
+      "fecha_cambio": "2025-09-12T14:26:35.000Z"
+    },
+    {
+      "id": 41,
+      "ticket_id": 13,
+      "estado_anterior": "nuevo",
+      "estado_nuevo": "cancelado",
+      "usuario_id": 7,
+      "comentario": null,
+      "fecha_cambio": "2025-09-15T10:06:53.000Z"
+    }
+  ],
+  "export_date": "2025-09-16T11:11:45.476Z"
+}

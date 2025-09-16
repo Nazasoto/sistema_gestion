@@ -1,0 +1,87 @@
+{
+  "export_date": "2025-09-16T11:11:50.217Z",
+  "tables_exported": 16,
+  "total_records": 303,
+  "tables_summary": [
+    {
+      "table": "_migrations",
+      "records": 4,
+      "status": "OK"
+    },
+    {
+      "table": "bitacora_eventos",
+      "records": 14,
+      "status": "OK"
+    },
+    {
+      "table": "noticias",
+      "records": 1,
+      "status": "OK"
+    },
+    {
+      "table": "password_reset_requests",
+      "records": 19,
+      "status": "OK"
+    },
+    {
+      "table": "password_resets",
+      "records": 1,
+      "status": "OK"
+    },
+    {
+      "table": "sucursales",
+      "records": 78,
+      "status": "OK"
+    },
+    {
+      "table": "sucursales_backup",
+      "records": 77,
+      "status": "OK"
+    },
+    {
+      "table": "ticket_history",
+      "records": 41,
+      "status": "OK"
+    },
+    {
+      "table": "tickets",
+      "records": 13,
+      "status": "OK"
+    },
+    {
+      "table": "tickets_backup_1756922176613",
+      "records": 8,
+      "status": "OK"
+    },
+    {
+      "table": "tickets_backup_1756922259441",
+      "records": 8,
+      "status": "OK"
+    },
+    {
+      "table": "tickets_backup_1756922279155",
+      "records": 8,
+      "status": "OK"
+    },
+    {
+      "table": "tickets_backup_1756922304192",
+      "records": 8,
+      "status": "OK"
+    },
+    {
+      "table": "tickets_backup_1757003035884",
+      "records": 4,
+      "status": "OK"
+    },
+    {
+      "table": "tickets_backup_1757436593063",
+      "records": 12,
+      "status": "OK"
+    },
+    {
+      "table": "usuarios",
+      "records": 7,
+      "status": "OK"
+    }
+  ]
+}

@@ -1,14 +1,19 @@
 import mysql from 'mysql2/promise';
 import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 
-dotenv.config();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+dotenv.config({ path: join(__dirname, '../.env') });
 
 const dbConfig = {
-  host: process.env.DB_HOST || 'nozomi.proxy.rlwy.net',
-  port: parseInt(process.env.DB_PORT || '12624'),
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || 'amFgayKbDLBEvAKVRjOfPvDAvXWtGfWS',
-  database: process.env.DB_NAME || 'railway',
+  host: process.env.DB_HOST,
+  port: parseInt(process.env.DB_PORT),
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
   ssl: { rejectUnauthorized: false }
 };
 

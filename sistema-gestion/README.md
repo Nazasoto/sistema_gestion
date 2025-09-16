@@ -1,12 +1,52 @@
-# React + Vite
+# Sistema de Gestión - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend del sistema de gestión de tickets desarrollado con React + Vite.
 
-Currently, two official plugins are available:
+## 🚀 Despliegue en Vercel
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este frontend está configurado para desplegarse en Vercel y conectarse con el backend en Railway.
 
-## Expanding the ESLint configuration
+### Variables de Entorno Requeridas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Configura estas variables en tu proyecto de Vercel:
+
+```env
+VITE_API_URL=https://sistemagestion-production.up.railway.app
+REACT_APP_USE_SESSION_STORAGE=true
+REACT_APP_TOKEN_EXPIRATION=7200000
+REACT_APP_ENABLE_DEBUG_LOGS=false
+```
+
+### Configuración Local
+
+1. Copia `.env.example` a `.env`
+2. Actualiza `VITE_API_URL` con tu URL de Railway
+3. Instala dependencias: `npm install`
+4. Ejecuta en desarrollo: `npm run dev`
+
+### Build para Producción
+
+```bash
+npm run build
+```
+
+## 🔧 Configuración de Vercel
+
+El archivo `vercel.json` está configurado para:
+- Servir el frontend desde Vercel
+- Hacer proxy de las llamadas `/api/*` al backend en Railway
+- Build automático con Vite
+
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── components/     # Componentes React
+├── config/        # Configuración de la app
+├── assets/        # Recursos estáticos
+└── ...
+```
+
+## 🔗 Backend
+
+El backend está desplegado en Railway. Ver documentación del backend para más detalles.

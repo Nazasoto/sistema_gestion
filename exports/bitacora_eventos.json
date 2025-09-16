@@ -1,0 +1,322 @@
+{
+  "table_name": "bitacora_eventos",
+  "structure": [
+    {
+      "Field": "id",
+      "Type": "int",
+      "Null": "NO",
+      "Key": "PRI",
+      "Default": null,
+      "Extra": "auto_increment"
+    },
+    {
+      "Field": "fecha_evento",
+      "Type": "datetime",
+      "Null": "YES",
+      "Key": "MUL",
+      "Default": "CURRENT_TIMESTAMP",
+      "Extra": "DEFAULT_GENERATED"
+    },
+    {
+      "Field": "tipo_evento",
+      "Type": "enum('login','logout','error','ticket_creado','ticket_asignado','ticket_resuelto','ticket_cancelado','reasignacion','rate_limit','seguridad')",
+      "Null": "NO",
+      "Key": "MUL",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "usuario_id",
+      "Type": "int",
+      "Null": "YES",
+      "Key": "MUL",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "sucursal",
+      "Type": "varchar(50)",
+      "Null": "YES",
+      "Key": "MUL",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "descripcion",
+      "Type": "text",
+      "Null": "NO",
+      "Key": "",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "detalles",
+      "Type": "json",
+      "Null": "YES",
+      "Key": "",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "ip_address",
+      "Type": "varchar(45)",
+      "Null": "YES",
+      "Key": "",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "user_agent",
+      "Type": "text",
+      "Null": "YES",
+      "Key": "",
+      "Default": null,
+      "Extra": ""
+    },
+    {
+      "Field": "severidad",
+      "Type": "enum('info','warning','error','critical')",
+      "Null": "YES",
+      "Key": "MUL",
+      "Default": "info",
+      "Extra": ""
+    }
+  ],
+  "data": [
+    {
+      "id": 98,
+      "fecha_evento": "2025-09-12T20:50:49.000Z",
+      "tipo_evento": "login",
+      "usuario_id": 7,
+      "sucursal": "98",
+      "descripcion": "Usuario TamaraG (Tamara Gamarra) inició sesión",
+      "detalles": {
+        "role": "sucursal",
+        "usuario": "TamaraG",
+        "sucursal": "98",
+        "usuario_id": 7
+      },
+      "ip_address": "186.108.168.90",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "severidad": "info"
+    },
+    {
+      "id": 99,
+      "fecha_evento": "2025-09-13T02:43:12.000Z",
+      "tipo_evento": "login",
+      "usuario_id": 1,
+      "sucursal": "Central",
+      "descripcion": "Usuario nazasoto_ (Nazareno Soto) inició sesión",
+      "detalles": {
+        "role": "soporte",
+        "usuario": "nazasoto_",
+        "sucursal": "Central",
+        "usuario_id": 1
+      },
+      "ip_address": "201.219.173.200",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "severidad": "info"
+    },
+    {
+      "id": 100,
+      "fecha_evento": "2025-09-13T13:49:57.000Z",
+      "tipo_evento": "login",
+      "usuario_id": 1,
+      "sucursal": "Central",
+      "descripcion": "Usuario nazasoto_ (Nazareno Soto) inició sesión",
+      "detalles": {
+        "role": "soporte",
+        "usuario": "nazasoto_",
+        "sucursal": "Central",
+        "usuario_id": 1
+      },
+      "ip_address": "186.108.168.90",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "severidad": "info"
+    },
+    {
+      "id": 101,
+      "fecha_evento": "2025-09-13T14:03:33.000Z",
+      "tipo_evento": "login",
+      "usuario_id": 1,
+      "sucursal": "Central",
+      "descripcion": "Usuario nazasoto_ (Nazareno Soto) inició sesión",
+      "detalles": {
+        "role": "soporte",
+        "usuario": "nazasoto_",
+        "sucursal": "Central",
+        "usuario_id": 1
+      },
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "severidad": "info"
+    },
+    {
+      "id": 102,
+      "fecha_evento": "2025-09-13T16:28:36.000Z",
+      "tipo_evento": "seguridad",
+      "usuario_id": null,
+      "sucursal": null,
+      "descripcion": "Intento de login fallido para usuario: tamarag",
+      "detalles": {
+        "motivo": "contraseña_incorrecta",
+        "usuario_intento": "tamarag"
+      },
+      "ip_address": "186.108.168.90",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "severidad": "warning"
+    },
+    {
+      "id": 103,
+      "fecha_evento": "2025-09-13T16:28:42.000Z",
+      "tipo_evento": "login",
+      "usuario_id": 7,
+      "sucursal": "98",
+      "descripcion": "Usuario TamaraG (Tamara Gamarra) inició sesión",
+      "detalles": {
+        "role": "sucursal",
+        "usuario": "TamaraG",
+        "sucursal": "98",
+        "usuario_id": 7
+      },
+      "ip_address": "186.108.168.90",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "severidad": "info"
+    },
+    {
+      "id": 104,
+      "fecha_evento": "2025-09-14T20:13:32.000Z",
+      "tipo_evento": "login",
+      "usuario_id": 7,
+      "sucursal": "98",
+      "descripcion": "Usuario TamaraG (Tamara Gamarra) inició sesión",
+      "detalles": {
+        "role": "sucursal",
+        "usuario": "TamaraG",
+        "sucursal": "98",
+        "usuario_id": 7
+      },
+      "ip_address": "201.219.173.200",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "severidad": "info"
+    },
+    {
+      "id": 105,
+      "fecha_evento": "2025-09-15T12:59:16.000Z",
+      "tipo_evento": "login",
+      "usuario_id": 7,
+      "sucursal": "98",
+      "descripcion": "Usuario TamaraG (Tamara Gamarra) inició sesión",
+      "detalles": {
+        "role": "sucursal",
+        "usuario": "TamaraG",
+        "sucursal": "98",
+        "usuario_id": 7
+      },
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "severidad": "info"
+    },
+    {
+      "id": 106,
+      "fecha_evento": "2025-09-15T14:36:15.000Z",
+      "tipo_evento": "login",
+      "usuario_id": 7,
+      "sucursal": "98",
+      "descripcion": "Usuario TamaraG (Tamara Gamarra) inició sesión",
+      "detalles": {
+        "role": "sucursal",
+        "usuario": "TamaraG",
+        "sucursal": "98",
+        "usuario_id": 7
+      },
+      "ip_address": "::1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "severidad": "info"
+    },
+    {
+      "id": 107,
+      "fecha_evento": "2025-09-15T15:37:27.000Z",
+      "tipo_evento": "login",
+      "usuario_id": 1,
+      "sucursal": "Central",
+      "descripcion": "Usuario nazasoto_ (Nazareno Soto) inició sesión",
+      "detalles": {
+        "role": "soporte",
+        "usuario": "nazasoto_",
+        "sucursal": "Central",
+        "usuario_id": 1
+      },
+      "ip_address": "186.108.168.90",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "severidad": "info"
+    },
+    {
+      "id": 108,
+      "fecha_evento": "2025-09-15T15:38:00.000Z",
+      "tipo_evento": "login",
+      "usuario_id": 6,
+      "sucursal": "CENTRAL",
+      "descripcion": "Usuario josepinol (Jose Piñol) inició sesión",
+      "detalles": {
+        "role": "supervisor",
+        "usuario": "josepinol",
+        "sucursal": "CENTRAL",
+        "usuario_id": 6
+      },
+      "ip_address": "201.219.165.123",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "severidad": "info"
+    },
+    {
+      "id": 109,
+      "fecha_evento": "2025-09-15T15:41:37.000Z",
+      "tipo_evento": "login",
+      "usuario_id": 6,
+      "sucursal": "CENTRAL",
+      "descripcion": "Usuario josepinol (Jose Piñol) inició sesión",
+      "detalles": {
+        "role": "supervisor",
+        "usuario": "josepinol",
+        "sucursal": "CENTRAL",
+        "usuario_id": 6
+      },
+      "ip_address": "186.108.168.90",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "severidad": "info"
+    },
+    {
+      "id": 110,
+      "fecha_evento": "2025-09-15T22:36:09.000Z",
+      "tipo_evento": "seguridad",
+      "usuario_id": null,
+      "sucursal": null,
+      "descripcion": "Intento de login fallido para usuario: jpinol@palmaresltd.com.ar",
+      "detalles": {
+        "motivo": "contraseña_incorrecta",
+        "usuario_intento": "jpinol@palmaresltd.com.ar"
+      },
+      "ip_address": "201.219.165.123",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "severidad": "warning"
+    },
+    {
+      "id": 111,
+      "fecha_evento": "2025-09-15T22:36:33.000Z",
+      "tipo_evento": "login",
+      "usuario_id": 6,
+      "sucursal": "CENTRAL",
+      "descripcion": "Usuario josepinol (Jose Piñol) inició sesión",
+      "detalles": {
+        "role": "supervisor",
+        "usuario": "josepinol",
+        "sucursal": "CENTRAL",
+        "usuario_id": 6
+      },
+      "ip_address": "201.219.165.123",
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36",
+      "severidad": "info"
+    }
+  ],
+  "export_date": "2025-09-16T11:11:41.641Z"
+}

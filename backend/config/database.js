@@ -5,21 +5,31 @@ dotenv.config();
 
 // Configuración de la base de datos (Railway)
 const dbConfig = {
-  host: process.env.DB_HOST || 'nozomi.proxy.rlwy.net',
-  port: parseInt(process.env.DB_PORT || '12624'),
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || 'amFgayKbDLBEvAKVRjOfPvDAvXWtGfWS',
-  database: process.env.DB_NAME || 'railway',
+  host: process.env.DB_HOST,
+  port: parseInt(process.env.DB_PORT || '3306'),
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
-  ssl: {
+  ssl: process.env.NODE_ENV === 'production' ? {
     rejectUnauthorized: false
-  },
+  } : false,
   connectTimeout: 60000,
   charset: 'utf8mb4',
   timezone: 'local'
 };
+
+// Validar que las variables de entorno críticas estén presentes
+const requiredEnvVars = ['DB_HOST', 'DB_USER', 'DB_PASSWORD', 'DB_NAME'];
+const missingVars = requiredEnvVars.filter(varName => !process.env[varName]);
+
+if (missingVars.length > 0) {
+  console.error('❌ Variables de entorno faltantes:', missingVars.join(', '));
+  console.error('💡 Asegúrate de configurar estas variables en Railway o tu archivo .env');
+  process.exit(1);
+}
 
 // Crear el pool de conexiones
 const pool = mysql.createPool(dbConfig);
