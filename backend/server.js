@@ -60,6 +60,7 @@ app.set('trust proxy', 1);
 // Middlewares
 // Configuración de CORS simplificada
 const allowedOrigins = [
+  'https://gestionpalmares.vercel.app',
   'https://soportepalmares.vercel.app',
   'https://soportepalmares-n9gnikcol-palmares-collins.vercel.app',
   'https://soporte-palmares.vercel.app',
