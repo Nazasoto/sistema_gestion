@@ -68,6 +68,9 @@ const allowedOrigins = [
   'https://sistema-tickets.vercel.app',
   'https://sistema-tickets-git-main-nazasoto.vercel.app',
   'https://sistema-tickets-nazasoto.vercel.app',
+  'https://sistema-gestion.vercel.app',
+  'https://sistema-gestion-git-main-nazasoto.vercel.app',
+  'https://sistema-gestion-nazasoto.vercel.app',
   'http://localhost:3000',
   'http://localhost:5173',
   ...(process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',').map(s => s.trim()) : [])
