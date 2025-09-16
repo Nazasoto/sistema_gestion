@@ -11,7 +11,7 @@ Este frontend está configurado para desplegarse en Vercel y conectarse con el b
 Configura estas variables en tu proyecto de Vercel:
 
 ```env
-VITE_API_URL=https://tu-proyecto-railway.up.railway.app
+VITE_API_URL=https://soporte-backend-production.up.railway.app
 REACT_APP_USE_SESSION_STORAGE=true
 REACT_APP_TOKEN_EXPIRATION=7200000
 REACT_APP_ENABLE_DEBUG_LOGS=false
