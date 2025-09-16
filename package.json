@@ -4,8 +4,9 @@
   "description": "Sistema de gestión de tickets",
   "scripts": {
     "dev": "concurrently \"cd backend && npm run dev\" \"cd sistema-gestion && npm run dev\"",
-    "build": "cd sistema-gestion && npm run build",
-    "start": "npm run build && cd backend && npm run start"
+    "build": "cd sistema-gestion && npm install && npm run build",
+    "start": "npm run build && cd backend && npm run start",
+    "install": "cd sistema-gestion && npm install"
   },
   "devDependencies": {
     "concurrently": "^8.2.1"
