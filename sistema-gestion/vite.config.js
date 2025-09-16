@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 2000,
     // Configuraciones adicionales para optimizar el bundle
     minify: 'terser',
     terserOptions: {
