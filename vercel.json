@@ -1,6 +1,7 @@
 {
-  "buildCommand": "cd sistema-gestion && npm run build",
+  "buildCommand": "cd sistema-gestion && npm install && npm run build",
   "outputDirectory": "sistema-gestion/dist",
+  "installCommand": "cd sistema-gestion && npm install",
   "framework": "vite",
   "rewrites": [
     {
