@@ -1,27 +1,27 @@
 // Configuración base de la API
-// Usamos ruta relativa para que funcione tanto en desarrollo como en producción
-export const API_BASE_URL = "/api";
+// Usamos la variable de entorno para conectar con Railway
+export const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 export const API_ENDPOINTS = {
   AUTH: {
-    LOGIN: '/auth/login',
-    REGISTER: '/auth/register',
-    PROFILE: '/auth/me'
+    LOGIN: '/api/auth/login',
+    REGISTER: '/api/auth/register',
+    PROFILE: '/api/auth/me'
   },
   USERS: {
-    BASE: '/users',
-    PROFILE: '/users/profile'
+    BASE: '/api/users',
+    PROFILE: '/api/users/profile'
   },
   TICKET: {
-    BASE: '/tickets',
-    STATUS: (id) => `/tickets/${id}/estado`,
-    ASSIGN: (id) => `/tickets/${id}/asignar`,
-    STATS: '/tickets/estadisticas',
-    USER_TICKETS: (userId) => `/tickets?usuarioId=${userId}`,
-    REPORT: (id) => `/reportes/ticket/${id}/historial`
+    BASE: '/api/tickets',
+    STATUS: (id) => `/api/tickets/${id}/estado`,
+    ASSIGN: (id) => `/api/tickets/${id}/asignar`,
+    STATS: '/api/tickets/estadisticas',
+    USER_TICKETS: (userId) => `/api/tickets?usuarioId=${userId}`,
+    REPORT: (id) => `/api/reportes/ticket/${id}/historial`
   },
   AJUSTES: {
-    BASE: '/ajustes'
+    BASE: '/api/ajustes'
   }
 };
 
