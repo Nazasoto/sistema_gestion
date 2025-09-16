@@ -1,25 +1,11 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "sistema-gestion/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "https://sistemagestion-production.up.railway.app/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/sistema-gestion/$1"
-    }
-  ],
   "buildCommand": "cd sistema-gestion && npm run build",
   "outputDirectory": "sistema-gestion/dist",
-  "framework": "vite"
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://sistemagestion-production.up.railway.app/api/$1"
+    }
+  ]
 }
